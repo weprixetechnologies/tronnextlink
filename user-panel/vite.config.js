@@ -11,7 +11,7 @@ export default defineConfig({
         port: 3000,
         proxy: {
             '/api': {
-                target: 'http://localhost:5100',
+                target: 'https://api-backend-tronnext',
                 changeOrigin: true,
             }
         }
