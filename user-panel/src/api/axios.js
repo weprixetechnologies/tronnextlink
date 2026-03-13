@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://api-backend-tronnext/api',
+    baseURL: 'https://api-backend-tronnext.duckdns.org/api',
 });
 
 instance.interceptors.request.use(

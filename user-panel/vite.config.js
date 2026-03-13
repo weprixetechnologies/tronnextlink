@@ -11,7 +11,7 @@ export default defineConfig({
         port: 3000,
         proxy: {
             '/api': {
-                target: 'https://api-backend-tronnext',
+                target: 'https://api-backend-tronnext.duckdns.org',
                 changeOrigin: true,
             }
         }
