@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+    --primary: #4F46E5;
+    --success: #10B981;
+    --danger: #EF4444;
+    --warning: #F59E0B;
+    --background: #F9FAFB;
+    --sidebar-bg: #1E1B4B;
+    --sidebar-text: #C7D2FE;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+    .card {
+        @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-200 hover:shadow-md;
+    }
+
+    .btn {
+        @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+    }
+
+    .btn-primary {
+        @apply bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-100;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-gray-700 border border-gray-200 hover:bg-gray-50;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white hover:bg-red-700;
+    }
+
+    .btn-success {
+        @apply bg-emerald-600 text-white hover:bg-emerald-700;
+    }
+
+    .input {
+        @apply w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all;
+    }
+
+    .table-container {
+        @apply overflow-x-auto rounded-xl border border-gray-100 bg-white;
+    }
+
+    table {
+        @apply w-full text-sm text-left;
+    }
+
+    thead {
+        @apply text-xs text-gray-500 uppercase font-bold tracking-wider bg-gray-50 border-b border-gray-100;
+    }
+
+    th {
+        @apply px-6 py-4;
+    }
+
+    td {
+        @apply px-6 py-4 border-b border-gray-50;
+    }
+
+    tr:hover td {
+        @apply bg-gray-50/50;
+    }
+
+    .badge {
+        @apply px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
