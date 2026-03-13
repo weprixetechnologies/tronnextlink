@@ -8,6 +8,9 @@ export default defineConfig({
     plugins: [react(), tailwindcss()],
     server: {
         port: 3001,
+        host: true, // Listen on all network interfaces
+        cors: true, // Allow all cross-origin requests
+        allowedHosts: true, // Allow all hosts (for ngrok/tunnels)
         proxy: {
             '/api': {
                 target: 'https://api-backend-tronnext.duckdns.org',
